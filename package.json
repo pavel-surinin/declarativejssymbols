@@ -1,6 +1,6 @@
 {
   "name": "declarative-js-symbols",
-  "version": "1.0.2",
+  "version": "0.0.1",
   "description": "Symbols to extends native js Array and Object prototypes with declarative-js functionality.",
   "main": "index.js",
   "scripts": {

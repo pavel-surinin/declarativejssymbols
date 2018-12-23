@@ -7,7 +7,7 @@
     "test": "jest",
     "copy": "cp package.json target/out/package.json",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
-    "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out && npm pack "
+    "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out/src && npm pack "
   },
   "author": "",
   "license": "ISC",

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "copy": "cp package.json target/out/package.json",
+    "copy": "cp package.json target/out/src/package.json",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
     "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out/src && npm pack "
   },

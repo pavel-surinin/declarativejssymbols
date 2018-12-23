@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Symbols to extends native js Array and Object prototypes with declarative-js functionality.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest",
     "copy": "cp package.json target/out/src/package.json",

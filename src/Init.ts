@@ -1,17 +1,29 @@
-import { a } from './Symbol'
-import { toBe, Reducer } from 'declarative-js'
+import { extend } from './Symbol'
+import { Reducer } from 'declarative-js'
+import { Indexed } from './Functional'
+import { ObjectExtension, objectFx } from './Object'
+import { ArrayExtension, arrayFx } from './Array'
 
-(Array.prototype as Array<any>)[a] = function <T>() {
-    const array = this as Array<T>
-    return {
-        present(): Array<T> {
-            return array.filter(toBe.present)
-        },
-        uniqueBy(key: any): Array<T> {
-            return array.filter(toBe.uniqueBy(key))
-        },
-        toObject<K>(key: StringGetter<T>, value?: Getter<T, K>): Indexed<T> {
-            return array.reduce(Reducer.toObject(key, value!), {})
+function bindFunctions(functions: Indexed<Function>, scope: any) {
+    const ex = Object.keys(functions).map(k => functions[k])
+        .reduce(
+            Reducer.toObject(
+                fx => (fx as Function).name,
+                fx => (fx as Function).bind(scope)),
+            {}
+        )
+    return ex
+}
+
+(function () {
+    const keys = Reflect.ownKeys(Object.prototype)
+    const isExtended = keys.some(k => k === extend)
+    if (!isExtended) {
+        Array.prototype[extend] = function extendArrayPrototypes() {
+            return bindFunctions(arrayFx, this) as ArrayExtension<any>
+        }
+        Object.prototype[extend] = function extendObjectPrototypes() {
+            return bindFunctions(objectFx, this) as ObjectExtension<any>
         }
     }
-}
+})()

@@ -1,5 +1,4 @@
-import { a } from '../src/Symbol'
-import '../src/Init'
+import { extend } from '../src/Symbol'
 
 interface A {
     person?: P
@@ -23,12 +22,14 @@ describe('a', () => {
         ]
 
         const result = arr
-            .map(x => x.person)[a]()
-            .present()[a]()
+            .map(x => x.person)[extend]()
+            .present()[extend]()
             .uniqueBy(x => x.name)
-            .filter(x => x.name !== 'John')[a]()
-            .toObject(x => x.name, x => x.name)
+            .filter(x => x.name !== 'John')[extend]()
+            .toObject(x => x.name, x => x.name)[extend]()
+            .values()
+            .sort()
 
-        expect(result).toMatchObject({ Peter: 'Peter', Mike: 'Mike' })
+        expect(result).toMatchObject(['Peter', 'Mike'].sort())
     })
 })

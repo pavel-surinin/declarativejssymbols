@@ -18,14 +18,10 @@ function bindFunctions(functions: Indexed<Function>, scope: any) {
 }
 
 (function () {
-    const keys = Reflect.ownKeys(Object.prototype)
-    const isExtended = keys.some(k => k === extend)
-    if (!isExtended) {
-        Array.prototype[extend] = function extendArrayPrototypes() {
-            return bindFunctions(arrayFx, this) as ArrayExtension<any>
-        }
-        Object.prototype[extend] = function extendObjectPrototypes() {
-            return bindFunctions(objectFx, this) as ObjectExtension<any>
-        }
+    Array.prototype[extend] = function extendArrayPrototypes() {
+        return bindFunctions(arrayFx, this) as ArrayExtension<any>
+    }
+    Object.prototype[extend] = function extendObjectPrototypes() {
+        return bindFunctions(objectFx, this) as ObjectExtension<any>
     }
 })()

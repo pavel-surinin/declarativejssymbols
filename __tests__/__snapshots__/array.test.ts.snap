@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extend array group by cb 1`] = `
+exports[`array transform group by cb 1`] = `
 Object {
   "John": Array [
     Object {
@@ -35,7 +35,7 @@ Object {
 }
 `;
 
-exports[`extend array group by key 1`] = `
+exports[`array transform group by key 1`] = `
 Object {
   "John": Array [
     Object {

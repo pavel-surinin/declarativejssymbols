@@ -11,7 +11,7 @@
     "compile": "tsc",
     "delete:target": "rm -rf target",
     "build": "npm run delete:target && npm run compile && npm test && npm run lint",
-    "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md",
+    "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md && cp LICENCE target/out/LICENCE && cp .npmignore target/out/.npmignore",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
     "pack:it": "npm run build && npm run commit:test && npm version patch && npm run copy && cd target/out && npm pack"
   },

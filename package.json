@@ -14,6 +14,8 @@
     "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md && cp LICENCE target/out/LICENCE && cp .npmignore target/out/.npmignore",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
     "publish:patch": "npm run build && npm version patch && npm run copy && npm publish target/out",
+    "publish:minor": "npm run build && npm version minor && npm run copy && npm publish target/out",
+    "publish:major": "npm run build && npm version major && npm run copy && npm publish target/out",
     "coveralls": "cat target/coverage/lcov.info | coveralls",
     "docsify": "docsify init ./docs",
     "docs:commit": "npm run docsify && git add . && git commit -m \"Updated generated documentation\" && git push",

@@ -1,8 +1,10 @@
 import { extend } from './Symbol'
 import { Reducer } from 'declarative-js'
-import { Indexed } from './Functional'
-import { ObjectExtension, objectFx } from './Object'
-import { ArrayExtension, arrayFx } from './Array'
+import { Indexed } from './types/CommonTypes'
+import { objectFx } from './Object'
+import { ObjectExtension } from './types/ObjectTypes'
+import { arrayFx } from './Array'
+import { ArrayExtension } from './types/ArrayTypes'
 
 function bindFunctions(functions: Indexed<Function>, scope: any) {
     const ex = Object.keys(functions).map(k => functions[k])

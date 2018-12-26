@@ -1,16 +1,21 @@
 {
   "name": "declarative-js-symbols",
   "version": "0.0.10",
-  "description": "Symbols to extends native js Array and Object prototypes with declarative-js functionality.",
+  "description": "Symbols to extend  JavaScript Array and Object prototypes with declarative-js functionality.",
   "main": "index.js",
   "types": "index.d.ts",
+  "homepage": "https://pavel-surinin.github.io/declarativejssymbol/#/",
   "scripts": {
     "test": "jest",
-    "copy": "cp package.json target/out/src/package.json && cp readme.md target/out/src/readme.md",
+    "lint": "tslint --project ./tsconfig.json",
+    "compile": "tsc",
+    "delete:target": "rm -rf target",
+    "build": "npm run delete:target && npm run compile && npm test && npm run lint",
+    "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
-    "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out/src && npm pack"
+    "pack:it": "npm run build && npm run commit:test && npm version patch && npm run copy && cd target/out && npm pack"
   },
-  "author": "",
+  "author": "Pavel Surinin <pavel.surinin@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "declarative-js": "3.2.4"

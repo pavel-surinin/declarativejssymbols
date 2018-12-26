@@ -4,7 +4,7 @@ node_js:
 
 script:
   - npm test -- --coverage
+  - npm run docs:commit
 
 after_script:
   - npm run coveralls
-  - npm run docs:commit

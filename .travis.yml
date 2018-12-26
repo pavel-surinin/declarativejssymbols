@@ -7,3 +7,4 @@ script:
 
 after_script:
   - npm run coveralls
+  - npm run docs:commit

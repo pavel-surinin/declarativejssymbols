@@ -14,7 +14,10 @@
     "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md && cp LICENCE target/out/LICENCE && cp .npmignore target/out/.npmignore",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
     "publish:patch": "npm run build && npm version patch && npm run copy && npm publish target/out",
-    "coveralls": "cat target/coverage/lcov.info | coveralls"
+    "coveralls": "cat target/coverage/lcov.info | coveralls",
+    "docsify": "docsify init ./docs",
+    "docs:commit": "npm run docsify && git add . && git commit -m \"Updated generated documentation\" && git push",
+    "docs:start": "docsify serve ./docs"
   },
   "author": "Pavel Surinin <pavel.surinin@gmail.com>",
   "license": "ISC",

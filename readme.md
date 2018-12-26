@@ -1,5 +1,9 @@
 # declarative-js-symbols
 
+[![npm version](https://badge.fury.io/js/declarative-js-symbols.svg)](https://www.npmjs.com/package/declarative-js-symbols)
+[![Build Status](https://travis-ci.org/pavel-surinin/declarativejssymbols.svg?branch=master)](https://travis-ci.org/pavel-surinin/declarative-js-symbols)
+[![Coverage Status](https://coveralls.io/repos/github/pavel-surinin/declarativejssymbols/badge.svg?branch=master)](https://coveralls.io/github/pavel-surinin/declarativejssymbols?branch=master)
+
 Symbol that extends `array` and `object` with additional functions from declarative-js package.
 
 ## Usage

@@ -1,5 +1,9 @@
 # declarative-js-symbols
 
+[![npm version](https://badge.fury.io/js/declarative-js-symbols.svg)](https://www.npmjs.com/package/declarative-js-symbols)
+[![Build Status](https://travis-ci.org/pavel-surinin/declarativejssymbols.svg?branch=master)](https://travis-ci.org/pavel-surinin/declarative-js-symbols)
+[![Coverage Status](https://coveralls.io/repos/github/pavel-surinin/declarativejssymbols/badge.svg?branch=master)](https://coveralls.io/github/pavel-surinin/declarativejssymbols?branch=master)
+
 Symbol that extends `array` and `object` with additional functions from declarative-js package.
 
 ## Usage
@@ -19,7 +23,7 @@ const transformedData =
 
 ## Array
 
-### Equal
+### equal
 Filters out items, that are not equal to provided item in parameters.
 Objects are compared to be deep equal.
 ```typescript
@@ -331,8 +335,6 @@ Is object contains key
 interface ObjectExtension<T> {
     containsKey(key: string): boolean
 }
-```
-```javascript
 ```
 ### containsValue 
 Is object contains value

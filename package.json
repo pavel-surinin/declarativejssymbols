@@ -4,7 +4,7 @@
   "description": "Symbols to extend  JavaScript Array and Object prototypes with declarative-js functionality.",
   "main": "index.js",
   "types": "index.d.ts",
-  "homepage": "https://pavel-surinin.github.io/declarativejssymbol/#/",
+  "homepage": "https://pavel-surinin.github.io/declarativejssymbols/#/",
   "scripts": {
     "test": "jest",
     "lint": "tslint --project ./tsconfig.json",

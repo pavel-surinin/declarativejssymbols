@@ -13,7 +13,8 @@
     "build": "npm run delete:target && npm run compile && npm test && npm run lint",
     "copy": "cp package.json target/out/package.json && cp readme.md target/out/readme.md && cp LICENCE target/out/LICENCE && cp .npmignore target/out/.npmignore",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
-    "publish:patch": "npm run build && npm version patch && npm run copy && npm publish target/out"
+    "publish:patch": "npm run build && npm version patch && npm run copy && npm publish target/out",
+    "coveralls": "cat target/coverage/lcov.info | coveralls"
   },
   "author": "Pavel Surinin <pavel.surinin@gmail.com>",
   "license": "ISC",

@@ -15,7 +15,7 @@
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
     "publish:patch": "npm run build && npm version patch && npm run copy && npm publish target/out",
     "coveralls": "cat target/coverage/lcov.info | coveralls",
-    "docsify": "npx docsify init ./docs",
+    "docsify": "docsify init ./docs",
     "docs:commit": "npm run docsify && git add . && git commit -m \"Updated generated documentation\" && git push",
     "docs:start": "docsify serve ./docs"
   },

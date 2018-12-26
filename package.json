@@ -6,9 +6,9 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "jest",
-    "copy": "cp package.json target/out/src/package.json",
+    "copy": "cp package.json target/out/src/package.json && cp readme.md target/out/src/readme.md",
     "commit:test": "git add . && git commit -m \"test commit\" && git push",
-    "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out/src && npm pack "
+    "pack:it": "npm run commit:test && tsc && npm version patch && npm run copy && cd target/out/src && npm pack"
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +16,12 @@
     "declarative-js": "3.2.4"
   },
   "devDependencies": {
-    "@types/jest": "22.2.3",
+    "@types/jest": "23.3.10",
     "coveralls": "3.0.2",
-    "jest": "22.4.3",
-    "ts-jest": "22.4.5",
+    "docsify": "4.8.6",
+    "jest": "23.6.0",
+    "prettier": "1.15.3",
+    "ts-jest": "23.10.5",
     "tslint": "5.10.0",
     "typescript": "3.2.2"
   }

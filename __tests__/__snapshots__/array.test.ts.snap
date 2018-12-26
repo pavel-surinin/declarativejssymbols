@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`extend array group by cb 1`] = `
+Object {
+  "John": Array [
+    Object {
+      "name": "John",
+    },
+    Object {
+      "name": "John",
+    },
+  ],
+  "Mike": Array [
+    Object {
+      "name": "Mike",
+    },
+    Object {
+      "name": "Mike",
+    },
+    Object {
+      "name": "Mike",
+    },
+  ],
+  "Peter": Array [
+    Object {
+      "name": "Peter",
+    },
+    Object {
+      "name": "Peter",
+    },
+    Object {
+      "name": "Peter",
+    },
+  ],
+}
+`;
+
+exports[`extend array group by key 1`] = `
+Object {
+  "John": Array [
+    Object {
+      "name": "John",
+    },
+    Object {
+      "name": "John",
+    },
+  ],
+  "Mike": Array [
+    Object {
+      "name": "Mike",
+    },
+    Object {
+      "name": "Mike",
+    },
+    Object {
+      "name": "Mike",
+    },
+  ],
+  "Peter": Array [
+    Object {
+      "name": "Peter",
+    },
+    Object {
+      "name": "Peter",
+    },
+    Object {
+      "name": "Peter",
+    },
+  ],
+}
+`;

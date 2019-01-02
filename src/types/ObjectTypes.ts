@@ -1,7 +1,7 @@
 import { extend } from '../Symbol'
 declare global {
     interface Object {
-        [extend](): ObjectExtension<any>
+        [extend]<T>(): ObjectExtension<T>
     }
 }
 export type ObjectExtension<T> = {

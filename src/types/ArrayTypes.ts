@@ -124,7 +124,7 @@ export type ArrayExtension<T> = {
      * @example
      * [[1,2],[3,4]][extend]().flat() // [1,2,3,4]
      */
-    flat(): Array<T>
+    flat(): T
     /**
      * Collects items to object by key from callback. If function resolves key,
      * that already exists it will throw an Error. Second callback is value mapper.

@@ -1,6 +1,6 @@
 {
   "name": "declarative-js-symbols",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Pavel Surinin <pavel.surinin@gmail.com>",
   "description": "Symbols to extend  JavaScript Array and Object prototypes with declarative-js functionality.",
   "main": "index.js",

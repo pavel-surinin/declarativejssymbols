@@ -6,6 +6,11 @@
 
 Symbol that extends `array` and `object` with additional functions from declarative-js package.
 
+## Install
+```
+npm i declarative-js-symbols --save
+```
+
 ## Usage
 ```javascript
 import { extends } from 'declarative-js-symbols'
@@ -19,6 +24,52 @@ const transformedData =
         .takeWhile(x => x.severity === 'Critical')
         .map(x => x.task)[extends]()
         .groupBy('taskName')
+```
+
+Imagine, that we maintain two npm packages and want to ensure that all dependencies have same versions.
+```javascript
+import { extends } from 'declarative-js-symbols'
+
+const p1 = {
+    "name": "package1",
+    "version": "1.0.0",
+    "devDependencies": {
+        "jest": "23.6.0", // <==
+        "prettier": "1.15.3"
+    }
+}
+const p2 = {
+    "name": "package2",
+    "version": "1.0.0",
+    "devDependencies": {
+        "jest": "22.0.0", // <==
+        "prettier": "1.15.3"
+    }
+}
+
+function toHaveMoreVersions(entry) {
+    return entry.value[extends]()
+        .unique()
+        .length > 1
+}
+
+function toInvalidDependency(entry) {
+    return {
+            name: entry.key, 
+            versions: entry.value.map(e => e.value)
+        }
+}
+
+const invalidDeps = [p1, p2]
+    .map(pck => pck.devDependencies) // object[]
+    .map(pck => pck[extend]().entries())[extend]() // {key, value}[][]
+    .flat()[extend]() // {key, value}[]
+    .groupBy('key')[extend]() // {dependencyName: {name: version}[]}
+    .entries() // {key, value}[]
+    .filter(toHaveMoreVersions)
+    .map(toInvalidDependency)
+// [{name: 'Jest', versions: ['23.6.0', '22.0.0']}]
+
 ```
 
 ## Array
@@ -146,7 +197,7 @@ interface ArrayExtension<T> {
 Function to make from 2d array simple array
 ```typescript
 interface ArrayExtension<T> {
-    flat(): Array<T>
+    flat(): T
 }
 ```
 ```javascript
